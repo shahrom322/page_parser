@@ -1,3 +1,5 @@
 Django
 requests
 beautifulsoup4
+fake-useragent
+lxml

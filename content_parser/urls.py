@@ -1,8 +1,9 @@
 from django.urls import path
 
-from .views import content_parser
+from .views import main_page, parse
 
 
 urlpatterns = [
-    path('', content_parser),
+    path('', main_page, name='main'),
+    path('parse/', parse, name='parse'),
 ]
