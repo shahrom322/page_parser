@@ -9,7 +9,7 @@ class ContentParser:
     """Класс для парсинга, принимает аргументы: url: доменный адрес сайта,
     width: ширина строки в символах, save_images: сохранять ссылки на изображения."""
 
-    def __init__(self, url: str, width: int, save_images: bool = False):
+    def __init__(self, url: str, width: int = 0, save_images: bool = False):
         self.url = url
         self.width = width
         self.save_images = save_images
