@@ -1,8 +1,8 @@
 import textwrap
 
+from decouple import config
 import requests
 from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
 
 
 class ContentParser:
@@ -14,9 +14,8 @@ class ContentParser:
         self.width = width
         self.save_images = save_images
 
-        # Имитируем реального User-Agent библиотекой fake_useragent
-        self.user_agent = UserAgent()
-        self.headers = {'accept': '*/*', 'user-agent': self.user_agent.chrome}
+        self.user_agent = config('USER_AGENT')
+        self.headers = {'accept': '*/*', 'user-agent': self.user_agent}
 
         try:
             response = requests.get(self.url, headers=self.headers)
