@@ -10,3 +10,7 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 # Копируем приложение
 COPY . .
+# Прослушиваем порт
+EXPOSE 8000
+# Команда для старта сервера
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

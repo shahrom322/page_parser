@@ -6,12 +6,16 @@
 Клонируем репозиторий:
 
     git clone https://github.com/shahrom322/page_parser.git
+Собираем докер-образ:
+
+    docker build -t parser .
 Запускаем докер-контейнер:
 
-    docker-compose up -d
+    docker run -p 8000:8000 --name parser_container parser 
 Запускаем тесты:
 
-    docker-compose exec web python manage.py test
+    docker exec -it parser_container python manage.py test
+
 Сервер доступен по адресу localhost:8000
 ## Задание
 Написать программу, которая по переданному URL парсит веб-страницу, выделяет полезный контент и возвращает его в виде текста с шириной строки `N` символов.

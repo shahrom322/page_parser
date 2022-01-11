@@ -12,6 +12,7 @@ website From here you can: Browse the first website Browse the first
 website using the line-mode browser simulator Learn about the birth of
 the web Learn about CERN, the physics laboratory where the web was
 born
+
 Изображения:
 '''
 
@@ -54,5 +55,5 @@ class ViewsTest(TestCase):
         """Проверяем данные возвращаемые парсером, в случае не корректного url."""
         url = 'test.url'
         content = ContentParser(url).parse()
-        expected_result = '''Текст:\nПроизошла ошибка подключения по адресу test.url'''
+        expected_result = f'''Текст:\nПроизошла ошибка подключения по адресу {url}'''
         self.assertEqual(content, expected_result)
