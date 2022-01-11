@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import SimpleTestCase
 from django.urls import reverse
 
 from .content_parser import ContentParser
@@ -17,7 +17,7 @@ born
 '''
 
 
-class ViewsTest(TestCase):
+class ViewsTest(SimpleTestCase):
     """Тестирование контроллеров сайта."""
 
     def test_main_view_status(self):
